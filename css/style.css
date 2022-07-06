@@ -1,0 +1,28 @@
+.bg-header {
+    background: url('../assets/bg-masthead.jpg');
+    height: 80vh;
+    background-position: center;
+}
+
+.ready {
+    background-attachment: fixed;
+    background: url('../assets/bg-masthead.jpg');
+    height: 40vh;
+    width: 100%;
+    background-position: center;
+}
+
+button:hover,
+button:focus {
+    transition-duration: 0.3s;
+    cursor: pointer;
+    opacity: 0.5;
+    transform: translate(0, -3px)
+}
+
+img:hover,
+img:focus {
+    transition-duration: 0.3s;
+    cursor: pointer;
+    opacity: 0.8;
+}
