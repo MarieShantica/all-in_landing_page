@@ -35,11 +35,8 @@
   <script src="https://kit.fontawesome.com/e0a0ddd3e6.js" crossorigin="anonymous"></script>
   <!-- splide js CDN -->
   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js"></script>
-  <!-- JS -->
-  <!-- <script src="script.js"></script> -->
 
-
-
+  <!-- splide JS -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       var splide = new Splide('.splide', {
@@ -50,12 +47,37 @@
           640: {
             perPage: 1,
             padding: '20%',
-
           },
         }
       });
       splide.mount();
     });
+  </script>
+
+  <!-- sweetAlert JS -->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script>
+    function popUp() {
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+
+      Toast.fire({
+        icon: 'success',
+        title: 'Signed in successfully'
+      })
+
+    }
+
   </script>
 
 
@@ -64,23 +86,81 @@
     <div class="container">
       <a class="navbar-brand " href="#">ALL-in Eduspace</a>
       </button>
-      <button class="btn btn-outline-success bg-primary text-light" type="submit">Sign Up</button>
-    </div>
+      <button class="btn btn-outline-success bg-primary text-light" type="button" data-bs-toggle="modal"
+        data-bs-target="#submitModal">Sign Up
+      </button>
     </div>
   </nav>
+
+  <div class="modal fade" id="submitModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+    data-bs-backdrop="static" data-bs-keyboard="false" ;>
+    <div class=" modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-info bg-opacity-25">
+          <h5 class="modal-title" id="modal-title">Welcome! Please enter your data.</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput" style="color: gray">Email address</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword" style="color: gray">Password</label>
+          </div>
+          <div class="form-floating">
+            <input type="text" class="form-control" id="floatingName" placeholder="Full Name">
+            <label for="floatingName" style="color: gray">Full Name</label>
+          </div>
+          <br>
+          <div class="form-floating">
+            <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+              <option selected></option>
+              <option value="1">Male</option>
+              <option value="2">Female</option>
+            </select>
+            <label for="floatingSelect">Gender</label>
+          </div>
+          <br>
+          <div class="form-floating">
+            <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+              <option selected></option>
+              <option value="1">9</option>
+              <option value="2">10</option>
+              <option value="2">11</option>
+              <option value="2">12</option>
+            </select>
+            <label for="floatingSelect">Grade</label>
+          </div>
+        </div>
+
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary align" data-bs-dismiss="modal">Close</button>
+          <button onclick="popUp()" type="submit" class="btn btn-primary">Finish</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- banner -->
   <div class="bg-header align-items-center d-flex justify-content-center">
     <div class="container-fluid">
-      <h1 class="text-center text-white" style="text-shadow: 0 3px 10px rgb(38, 40, 71);">Sign Up for a FREE Initial
-      </h1>
-      <h1 class="text-center text-white" style="text-shadow: 0 3px 10px rgb(38, 40, 71);">Consultation!</h1>
+      <div class="signuphead">
+        <h1 class="text-center text-white" style="text-shadow: 1px 1px 2px rgb(30, 28, 44), 0 0 25px rgb(206, 144, 106), 0 0 10px darkblue; 
+            font-size: 50px;">Sign Up for a FREE Initial
+        </h1>
+        <h1 class="text-center text-white" style="text-shadow: 1px 1px 2px rgb(30, 28, 44), 0 0 25px rgb(206, 144, 106), 0 0 10px darkblue;
+            font-size: 50px;">Consultation!</h1>
+
+      </div>
 
       <div class="row justify-content-center mt-5">
         <div class="col-md-5 col-11">
           <form class="d-flex w-100" role="search">
             <input class="form-control me-2" type="search" placeholder="Email Address" aria-label="Search">
-            <button class="mr-5 btn btn-outline-success bg-primary text-light" type="submit">Submit</button>
+            <button class="mr-5 btn btn-outline-success bg-primary text-light">Submit</button>
           </form>
         </div>
       </div>
@@ -91,21 +171,21 @@
   <div data-aos="zoom-in-up" class="container text-center pt-5 justify-content-center align-items-center">
     <br>
     <div class="row">
-      <div class="col-sm text-center">
+      <div class="all col-sm text-center">
         <img src="./assets/aspire.png" alt="" style="width: 80px; border-radius: 100%;
               box-shadow: 0 3px 200px rgb(255, 166, 133)">
         <h4 class="pt-2">Aspire</h4>
         <p class="px-md-5 px-3 fw-lighter">Explore students' passion & interest through
           a personalized mentorship</p>
       </div>
-      <div class="col-sm text-center">
+      <div class="all col-sm text-center">
         <img src="./assets/learn.png" alt="" style="width: 80px; border-radius: 100%;
               box-shadow: 0 3px 200px rgb(152, 169, 255)">
         <h4 class=" pt-2">Learn</h4>
         <p class="px-md-5 px-3 fw-lighter">Guide students to improve their academic performance
           & project portfolio through experiential programs</p>
       </div>
-      <div class="col-sm">
+      <div class="all col-sm">
         <img src="assets/lead.webp" alt="" style="width: 80px; border-radius: 100%;
               box-shadow: 0 3px 200px rgb(255, 166, 133)">
         <h4 class=" pt-2">Lead</h4>
@@ -131,13 +211,15 @@
       </div>
 
       <div data-aos="fade-up-left" class="col-md-6 p-0 order-md-2 order-1">
-        <img src="./assets/admission.webp" alt="" class="p-0" style="width: 100%; height: 100%;">
+        <div class="bg-content">
+          <img src="./assets/admission.webp" alt="" class="p-0" style="width: 100%; height: 100%;">
+        </div>
       </div>
     </div>
 
     <!-- career exploration -->
     <div data-aos="fade-up-right" class="row g-0">
-      <div class="col-md-6 p-0">
+      <div class="bg-content col-md-6 p-0">
         <img src="./assets/career.webp" alt="" class="p-0" style="width: 100%;">
       </div>
 
@@ -163,14 +245,14 @@
         </div>
       </div>
 
-      <div data-aos="fade-up-left" class="col-md-6 p-0 order-md-2 order-1">
+      <div data-aos="fade-up-left" class="bg-content col-md-6 p-0 order-md-2 order-1">
         <img src="./assets/academic.webp" alt="" class="p-0" style="width: 100%;">
       </div>
     </div>
 
     <!-- writing -->
     <div data-aos="fade-up-right" class="row g-0">
-      <div class="col-md-6 p-0">
+      <div class="bg-content col-md-6 p-0">
         <img src="./assets/writing.webp" alt="" class="p-0" style="width: 100%;">
       </div>
 
@@ -190,7 +272,7 @@
     <div class="splide__slider">
       <div class="splide__track">
         <ul class="splide__list">
-          <li data-aos="flip-up" class="testimony splide__slide col-4 text-center">
+          <li data-aos="flip-up" class="testimony splide__slide col-4 text-center py-3">
             <img src="./assets/testimonials-2.jpg" alt="" style="width: 50%; border-radius: 100%;
                         box-shadow: 0 3px 10px gray">
             <h5 class="pt-3">Fred S.</h5>
@@ -200,7 +282,7 @@
               The Instructor is also really good and willing to help."</p>
           </li>
 
-          <li data-aos="flip-up" class="testimony splide__slide col-4 text-center">
+          <li data-aos="flip-up" class="testimony splide__slide col-4 text-center py-3">
             <img src="./assets/testimonials-3.jpg" alt="" style="width: 50%; border-radius: 100%;
                         box-shadow: 0 3px 10px gray">
             <h5 class="pt-3">Sarah W.</h5>
@@ -211,7 +293,7 @@
               in just 4 days! I'm happy with my progress here."</p>
           </li>
 
-          <li data-aos="flip-up" class="testimony splide__slide col-4 text-center">
+          <li data-aos="flip-up" class="testimony splide__slide col-4 text-center py-3">
             <img src="./assets/testimonials-1.jpg" alt="" style="width: 50%; border-radius: 100%;
                                 box-shadow: 0 3px 10px gray">
             <h5 class="pt-3">Person 4</h5>
@@ -220,7 +302,7 @@
               a fast pass ticket that makes the process so much easier."</p>
           </li>
 
-          <li data-aos="flip-up" class="testimony splide__slide col-4 text-center">
+          <li data-aos="flip-up" class="testimony splide__slide col-4 text-center py-3">
             <img src="./assets/testimonials-2.jpg" alt="" style="width: 50%; border-radius: 100%;
                                         box-shadow: 0 3px 10px gray">
             <h5 class="pt-3">Person 5</h5>
@@ -229,7 +311,7 @@
               a fast pass ticket that makes the process so much easier."</p>
           </li>
 
-          <li data-aos="flip-up" class="testimony splide__slide col-4 text-center">
+          <li data-aos="flip-up" class="testimony splide__slide col-4 text-center py-3">
             <img src="./assets/testimonials-3.jpg" alt="" style="width: 50%; border-radius: 100%;
                                         box-shadow: 0 3px 10px gray">
             <h5 class="pt-3">Person 6</h5>
@@ -252,14 +334,16 @@
     <div class="ready container-fluid m-0">
       <div class="row justify-content-center">
         <div class="col-md-5 col-9">
-          <h3 class="text-center pt-5 text-light " style="text-shadow: 0 3px 10px rgb(38, 40, 71);">Ready to get
-            started? Sign up
+          <h1 class="signuphead text-center pt-5 text-light " style=" text-shadow: 1px 1px 2px rgb(30, 28, 44), 
+          0 0 25px rgb(206, 144, 106), 0 0 10px darkblue;">Ready to
+            get
+            started? <br> Sign up
             NOW!</h3>
 
-          <form class="d-flex w-100 pt-2" role="search">
-            <input class="form-control me-2" type="search" placeholder="Email Address" aria-label="Search">
-            <button class="mr-5 btn btn-outline-success bg-primary text-light" type="submit">Submit</button>
-          </form>
+            <form class="d-flex w-100 pt-2" role="search">
+              <input class="form-control me-2" type="search" placeholder="Email Address" aria-label="Search">
+              <button class="mr-5 btn btn-outline-success bg-primary text-light" type="submit">Submit</button>
+            </form>
         </div>
       </div>
     </div>

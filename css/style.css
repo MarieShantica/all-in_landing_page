@@ -1,3 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Mingzat&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+
+p {
+    font-family: 'Mingzat', sans-serif;
+}
+
+h1,
+h3,
+h4,
+h5 {
+    font-family: 'Fjalla One', sans-serif;
+}
+
+h3:hover,
+h3:focus {
+    transition-duration: 0.3s;
+    transform: translate(20px) scale(1.1);
+    cursor: pointer;
+    text-shadow: 15px 15px 15px rgb(100, 91, 88);
+}
+
+.all:hover img {
+    transition-duration: 0.3s;
+    transform: scale(1.1);
+}
+
 .bg-header {
     background: url('../assets/bg-masthead.jpg');
     height: 80vh;
@@ -17,20 +45,27 @@ button:focus {
     transition-duration: 0.3s;
     cursor: pointer;
     opacity: 0.5;
-    transform: translate(0, -3px)
+    transform: translate(0, -3px);
+    box-shadow: 0 10px 10px rgb(37, 35, 45);
 }
 
 img:hover,
 img:focus {
     transition-duration: 0.3s;
     cursor: pointer;
+}
+
+.bg-content {
+    position: relative;
+    overflow: hidden;
+}
+
+.bg-content:hover img {
+    transform: scale(1.1);
     opacity: 0.8;
 }
 
-@media screen and (max-width:800px) {
-    .people.testimony {
-        display: flex;
-        flex-direction: column;
-        width: 100% !important;
-    }
+.testimony:hover img {
+    transform: scale(1.1);
+    transition-duration: 0.3s;
 }
