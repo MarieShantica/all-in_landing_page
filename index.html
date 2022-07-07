@@ -100,46 +100,48 @@
           <h5 class="modal-title" id="modal-title">Welcome! Please enter your data.</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
-          <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput" style="color: gray">Email address</label>
+        <form action="" onsubmit="popUp()">
+          <div class="modal-body">
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
+              <label for="floatingInput" style="color: gray">Email address</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
+              <label for="floatingPassword" style="color: gray">Password</label>
+            </div>
+            <div class="form-floating">
+              <input type="text" class="form-control" id="floatingName" placeholder="Full Name" required>
+              <label for="floatingName" style="color: gray">Full Name</label>
+            </div>
+            <br>
+            <div class="form-floating">
+              <select class="form-select" id="floatingSelect" aria-label="Floating label select example" required>
+                <option selected></option>
+                <option value="1">Male</option>
+                <option value="2">Female</option>
+              </select>
+              <label for="floatingSelect">Gender</label>
+            </div>
+            <br>
+            <div class="form-floating">
+              <select class="form-select" id="floatingSelect" aria-label="Floating label select example" required>
+                <option selected></option>
+                <option value="1">9</option>
+                <option value="2">10</option>
+                <option value="2">11</option>
+                <option value="2">12</option>
+              </select>
+              <label for="floatingSelect">Grade</label>
+            </div>
           </div>
-          <div class="form-floating mb-3">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-            <label for="floatingPassword" style="color: gray">Password</label>
-          </div>
-          <div class="form-floating">
-            <input type="text" class="form-control" id="floatingName" placeholder="Full Name">
-            <label for="floatingName" style="color: gray">Full Name</label>
-          </div>
-          <br>
-          <div class="form-floating">
-            <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-              <option selected></option>
-              <option value="1">Male</option>
-              <option value="2">Female</option>
-            </select>
-            <label for="floatingSelect">Gender</label>
-          </div>
-          <br>
-          <div class="form-floating">
-            <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-              <option selected></option>
-              <option value="1">9</option>
-              <option value="2">10</option>
-              <option value="2">11</option>
-              <option value="2">12</option>
-            </select>
-            <label for="floatingSelect">Grade</label>
-          </div>
-        </div>
 
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary align" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Finish</button>
+          </div>
+        </form>
 
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary align" data-bs-dismiss="modal">Close</button>
-          <button onclick="popUp()" type="submit" class="btn btn-primary">Finish</button>
-        </div>
       </div>
     </div>
   </div>
