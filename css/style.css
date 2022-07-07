@@ -26,3 +26,11 @@ img:focus {
     cursor: pointer;
     opacity: 0.8;
 }
+
+@media screen and (max-width:800px) {
+    .people.testimony {
+        display: flex;
+        flex-direction: column;
+        width: 100% !important;
+    }
+}
